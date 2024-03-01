@@ -1,0 +1,57 @@
+---
+title: gtsummary tutorial
+format: 
+  typst:
+    paper: a4
+---
+
+## Setup
+
+```{r}
+#| label: setup
+library(gtsummary)
+library(tidyverse)
+library(gt)
+library(labelled)
+library(usethis)
+library(causaldata)
+library(skimr)
+library(flextable)
+view(trial)
+```
+
+## Example Dataset
+
+```{r}
+trial |> 
+  head() |> 
+  flextable()
+trial |> 
+  skim()
+```
+```{r}
+trial |> 
+  head() |> 
+  gt()
+```
+```{r}
+trial |> 
+  tbl_summary(by = trt,
+              type = age ~ "continuous2",
+              statistic = 
+                list(age ~ "{mean} ({sd})",
+                     response ~ "{n} / {N} ({p}%)"
+                     ),
+              label = grade ~ "Pathologic turmor grade",
+              digits = age ~ 1
+              )
+```
+```{r}
+trees |> 
+  tbl_summary()
+```
+```{r}
+trees |> 
+  gt()
+```
+

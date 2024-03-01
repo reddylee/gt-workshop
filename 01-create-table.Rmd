@@ -150,7 +150,7 @@ Use `gtcars` to create a **gt** table preview (with only a few of its columns). 
 ```{r}
 gtcars |>
   dplyr::select(mfr, model, year) |>
-  gt_preview()
+  gt_preview(bottom_n = 3)
 ```
 
 Don't want to see the row numbers? They can be excluded by using `incl_rownums = FALSE`.
@@ -201,7 +201,7 @@ gt_tbl |> gtsave("tab_1.html", inline_css = FALSE)
 Get a PNG file (essentially a screenshot of the HTML table) by using the .png extension.
 
 ```{r}
-#gt_tbl |> gtsave("tab_r.png")
+gt_tbl |> gtsave("tab_r.png")
 ```
 
 Get an RTF file by using the .rtf extension in the `filename`.

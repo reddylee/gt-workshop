@@ -362,7 +362,7 @@ exibble |>
   gt() |>
   fmt_currency(
     columns = num,
-    currency = "JPY"
+    currency = "CNY"
   ) |>
   fmt_currency(
     columns = currency,

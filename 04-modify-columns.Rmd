@@ -53,7 +53,7 @@ countrypops |>
   tail(5) |>
   gt() |>
   cols_align(
-    align = "left",
+    align = "right",
     columns = population
   )
 ```
@@ -84,7 +84,7 @@ countrypops |>
   tail(5) |>
   gt() |>
   cols_label(
-    country_name = "Name",
+    country_name = "Country",
     year = "Year",
     population = "Population"
   )
